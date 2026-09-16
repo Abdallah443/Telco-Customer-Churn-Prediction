@@ -1,0 +1,163 @@
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --primary: #2345c2;
+  --primary-dark: #172f8a;
+  --text: #1a1d29;
+  --muted: #5d6982;
+  --green: #1f9d61;
+  --red: #d64545;
+  --border: #e3e8f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #edf3ff, #f9fafc);
+  color: var(--text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  color: var(--primary-dark);
+}
+
+.header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr;
+  gap: 24px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(35, 69, 194, 0.08);
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+input,
+select,
+button {
+  border-radius: 10px;
+  font: inherit;
+}
+
+input,
+select {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: #f9fbff;
+  color: var(--text);
+  padding: 10px 12px;
+}
+
+button {
+  margin-top: 20px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+.result-box {
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 20px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.result-box.neutral {
+  background: #eef3ff;
+  color: var(--primary-dark);
+}
+
+.result-box.churn {
+  background: #ffe7e7;
+  color: var(--red);
+}
+
+.result-box.no-churn {
+  background: #e9f9f1;
+  color: var(--green);
+}
+
+.history-box {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+}
+
+.history-box h3 {
+  margin-top: 0;
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#historyList li {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fbfcff;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+  .layout,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
